@@ -38,6 +38,7 @@ public class Login {
          rep=new ExtentReports();
         rep.attachReporter(ext);
         rep.setSystemInfo("bowser", "chrome");
+        rep.setSystemInfo("OS", "Window");
         
     }
 
@@ -80,7 +81,7 @@ public class Login {
 
     @Test(priority = 2)
     public void Search_or_Add_Patient() {
-    	 v = rep.createTest("login");
+    	 v = rep.createTest("Search");
     	 v.assignAuthor("Tested By subhash");
     	 v.assignCategory("sanity Testing");
         int totalFrames = driver.findElements(By.tagName("iframe")).size();//4
