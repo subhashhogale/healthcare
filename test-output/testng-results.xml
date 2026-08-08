@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-08-08T20:39:41 IST" name="Default suite" finished-at="2026-08-08T20:40:17 IST" duration-ms="36465">
+    <groups>
+    </groups>
+    <test started-at="2026-08-08T20:39:41 IST" name="Default test" finished-at="2026-08-08T20:40:17 IST" duration-ms="36465">
+      <class name="HealthCare.Login">
+        <test-method is-config="true" signature="Blaunch()[pri:0, instance:HealthCare.Login@1165b38]" started-at="2026-08-08T20:39:41 IST" name="Blaunch" finished-at="2026-08-08T20:39:47 IST" duration-ms="5446" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Blaunch -->
+        <test-method signature="login()[pri:1, instance:HealthCare.Login@1165b38]" started-at="2026-08-08T20:39:47 IST" name="login" finished-at="2026-08-08T20:40:07 IST" duration-ms="20936" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="Search_or_Add_Patient()[pri:2, instance:HealthCare.Login@1165b38]" started-at="2026-08-08T20:40:07 IST" name="Search_or_Add_Patient" finished-at="2026-08-08T20:40:17 IST" duration-ms="9119" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Search_or_Add_Patient -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:HealthCare.Login@1165b38]" started-at="2026-08-08T20:40:17 IST" name="teardown" finished-at="2026-08-08T20:40:17 IST" duration-ms="867" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- HealthCare.Login -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
