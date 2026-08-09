@@ -30,7 +30,8 @@ public class Login {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://demo.openemr.io/openemr/interface/login/login.php?site=default");
-       ext=new ExtentSparkReporter("./target/ExtentReport.html");
+        String reportPath = System.getProperty("user.dir") + "/target/ExtentReport.html";
+       ext=new ExtentSparkReporter(reportPath);
        ext.config().setReportName("Healthcare Automation Report");
        ext.config().setDocumentTitle("Healthcare Test Execution Report");
        ext.config().setTheme(Theme.DARK);
@@ -113,6 +114,11 @@ public class Login {
     @AfterClass
     public void teardown() {
     	rep.flush();
+    	 System.out.println("Report Path: "
+    	            + System.getProperty("user.dir")
+    	            + "/target/ExtentReport.html");
+
+    	    driver.quit();
     	
     }
 }
