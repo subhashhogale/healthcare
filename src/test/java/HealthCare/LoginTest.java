@@ -70,7 +70,7 @@ public class LoginTest {
 
         WebElement patient = wait.until(
                 ExpectedConditions.elementToBeClickable(
-                        By.xpath("//div[text()='Patient']")));
+                        By.xpath("//*[@id='mainMenu']/div/div[6]/div/div")));
 
         patient.click();
 
