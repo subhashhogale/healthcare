@@ -14,7 +14,7 @@ pipeline {
         always {
             publishHTML([
                 reportDir: 'target',
-                reportFiles: 'ExtentReport.html',
+                reportFiles: 'report.html',
                 reportName: 'Extent Report',
                 keepAll: true,
                 alwaysLinkToLastBuild: true,
