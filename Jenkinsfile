@@ -6,6 +6,7 @@ pipeline {
         stage('Build') {
             steps {
                 bat 'mvn clean test'
+                bat 'dir target'
             }
         }
     }
@@ -14,7 +15,7 @@ pipeline {
         always {
             publishHTML([
                 reportDir: 'target',
-                reportFiles: 'report.html',
+                reportFiles: 'ExtentReport.html',
                 reportName: 'Extent Report',
                 keepAll: true,
                 alwaysLinkToLastBuild: true,
