@@ -1,4 +1,5 @@
 pipeline {
+
     agent any
 
     stages {
@@ -13,6 +14,15 @@ pipeline {
     post {
         always {
             echo 'Test execution completed'
+
+            publishHTML([
+                allowMissing: false,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'target',
+                reportFiles: 'report.html',
+                reportName: 'Extent Report'
+            ])
         }
 
         success {
