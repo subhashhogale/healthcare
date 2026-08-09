@@ -18,7 +18,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-public class Login {
+public class LoginTest {
 
     WebDriver driver;
     ExtentSparkReporter ext;
