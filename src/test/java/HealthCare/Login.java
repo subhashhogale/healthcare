@@ -30,7 +30,7 @@ public class Login {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://demo.openemr.io/openemr/interface/login/login.php?site=default");
-       ext=new ExtentSparkReporter("./target/report.html");
+       ext=new ExtentSparkReporter("./target/ExtentReport.html");
        ext.config().setReportName("Healthcare Automation Report");
        ext.config().setDocumentTitle("Healthcare Test Execution Report");
        ext.config().setTheme(Theme.DARK);
