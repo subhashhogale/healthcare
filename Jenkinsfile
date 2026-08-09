@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     stages {
+
         stage('Build') {
             steps {
                 bat 'mvn clean test'
@@ -11,15 +12,14 @@ pipeline {
 
     post {
         always {
-            echo 'Test execution completed'
-        }
-
-        success {
-            echo 'Tests Passed'
-        }
-
-        failure {
-            echo 'Tests Failed'
+            publishHTML([
+                reportDir: 'target',
+                reportFiles: 'ExtentReport.html',
+                reportName: 'Extent Report',
+                keepAll: true,
+                alwaysLinkToLastBuild: true,
+                allowMissing: false
+            ])
         }
     }
 }
