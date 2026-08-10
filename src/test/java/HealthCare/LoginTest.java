@@ -18,7 +18,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-public class Login {
+public class LoginTest {
 
     WebDriver driver;
     ExtentSparkReporter ext;
@@ -30,7 +30,8 @@ public class Login {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://demo.openemr.io/openemr/interface/login/login.php?site=default");
-       ext=new ExtentSparkReporter("./target/report.html");
+        String reportPath = System.getProperty("user.dir") + "/target/ExtentReport.html";
+       ext=new ExtentSparkReporter(reportPath);
        ext.config().setReportName("Healthcare Automation Report");
        ext.config().setDocumentTitle("Healthcare Test Execution Report");
        ext.config().setTheme(Theme.DARK);
@@ -39,6 +40,9 @@ public class Login {
         rep.attachReporter(ext);
         rep.setSystemInfo("bowser", "chrome");
         rep.setSystemInfo("OS", "Window");
+        
+        
+        ///////////////////////////////////////////////////////////
         
     }
 
@@ -66,7 +70,7 @@ public class Login {
 
         WebElement patient = wait.until(
                 ExpectedConditions.elementToBeClickable(
-                        By.xpath("//div[text()='Patient']")));
+                        By.xpath("//*[@id='mainMenu']/div/div[6]/div/div")));
 
         patient.click();
 
@@ -110,6 +114,11 @@ public class Login {
     @AfterClass
     public void teardown() {
     	rep.flush();
+    	 System.out.println("Report Path: "
+    	            + System.getProperty("user.dir")
+    	            + "/target/ExtentReport.html");
+
+    	    driver.quit();
     	
     }
 }
