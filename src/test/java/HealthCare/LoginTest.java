@@ -46,7 +46,7 @@ public class LoginTest {
         
     }
 
-    @Test(priority = 1)
+    @Test(priority = 1,retryAnalyzer = RetryAnalyzer.class)
     public void login() throws InterruptedException {
     	
     	 v = rep.createTest("login");
