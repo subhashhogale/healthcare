@@ -1,5 +1,6 @@
 package HealthCare;
 
+import java.io.IOException;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -47,7 +48,7 @@ public class LoginTest {
     }
 
     @Test(priority = 1,retryAnalyzer = RetryAnalyzer.class)
-    public void login() throws InterruptedException {
+    public void login() throws InterruptedException, IOException {
     	
     	 v = rep.createTest("login");
     	 v.assignAuthor("Tested By shailaja");
@@ -68,11 +69,17 @@ public class LoginTest {
 
         wait.until(ExpectedConditions.urlContains("main.php"));
 
-        WebElement patient = wait.until(
-                ExpectedConditions.elementToBeClickable(
-                        By.xpath("//*[@id='mainMenu']/div/div[6]/div/div")));
+        try {
 
-        patient.click();
+            wait.until(ExpectedConditions.elementToBeClickable(
+                By.xpath("//div[contains(text(),'Patient')]")
+            )).click();
+
+        } catch (Exception e) {
+
+            takeScreenshot.takeScreenshot1(driver, "Jenkins_Failure");
+            throw e;
+        }
 
         Thread.sleep(3000);
 
