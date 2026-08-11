@@ -114,10 +114,7 @@ public class LoginTest {
     @AfterClass
     public void teardown() {
     	rep.flush();
-    	 System.out.println("Report Path: "
-    	            + System.getProperty("user.dir")
-    	            + "/target/ExtentReport.html");
-
+    	
     	    driver.quit();
     	
     }
