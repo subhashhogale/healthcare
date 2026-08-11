@@ -43,7 +43,7 @@ Regards,
 QA Team
 """,
 
-                to: 'jobjenkin89@gmail.com,shailaja2595@gmail.com,priyajagtap509@gmail.com',
+                to: 'jobjenkin89@gmail.com,shailaja2595@gmail.com',
 
                 attachmentsPattern: 'target/ExtentReport.html'
             )
